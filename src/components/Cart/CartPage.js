@@ -35,7 +35,7 @@ function CartPage () {
         })
         const reqParams = POST_METHOD({ items, shippingInfo: 'indore' })
 
-        const response = await fetch(`http://localhost:5000/create-checkout-session`, reqParams);
+        const response = await fetch(`https://amazon-server-ig6d.onrender.com/create-checkout-session`, reqParams);
         const data = await response.json();
         if (data.success === true) {
             // await removeAllFromCart();

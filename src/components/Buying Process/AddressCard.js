@@ -10,7 +10,7 @@ function AddressCard () {
     }
     const onclick = async(e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/address/addaddress`, {
+        const response = await fetch(`https://amazon-server-ig6d.onrender.com/address/addaddress`, {
             method: 'POST',
             headers: {
               "Content-Type": 'application/json',

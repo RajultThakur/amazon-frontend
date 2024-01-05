@@ -1,8 +1,8 @@
 import React,{useRef, useState} from 'react'
 import AppContext from './appContext'
 import Data from '../ProductData/Data'
-const url ='http://localhost:5000/auth'
-const url2 ='http://localhost:5000/product'
+const url ='https://amazon-server-ig6d.onrender.com/auth'
+const url2 ='https://amazon-server-ig6d.onrender.com/product'
 function AppState(props) {
     const [logedUser,setLogedUser] = useState({name:"",email:""})
     const [category, setCategory] = useState([]);

@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import image from './Images/amazon.png'
 import {Link, useNavigate} from 'react-router-dom'
-const url="http://localhost:5000/auth"
+const url="https://amazon-server-ig6d.onrender.com/auth"
 function Signup() {
     const navigate = useNavigate();
 
