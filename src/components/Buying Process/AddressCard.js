@@ -6,7 +6,6 @@ function AddressCard () {
     const [address,setAddress] = useState({name:'',mobile:'',pincode:'',house:'',area:'',landmark:'',town:'',state:''})
     const onchange = (e) => {
         setAddress({...address,[e.target.name]:e.target.value});
-        console.log(e.target.value);
     }
     const onclick = async(e) => {
         e.preventDefault();
@@ -19,7 +18,6 @@ function AddressCard () {
             body: JSON.stringify({name:address.name,pincode:address.pincode,flat:address.house,area:address.area,landmark:address.landmark,town:address.town ,state:address.state})
           })
           const data = await response.json();
-        console.log(address);
     }
     
     return (

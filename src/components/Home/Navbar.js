@@ -21,9 +21,6 @@ function Navbar () {
             navigate('/')
         }, 100);
     }
-    useEffect(() => {
-        console.log(cartProducts)
-    }, [])
 
     return (
         <div className="navbar">

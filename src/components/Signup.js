@@ -29,7 +29,6 @@ function Signup() {
         }); 
 
         const data = await response.json();
-        console.log(data);
         setUserData(data);
 
         // if(data.success === false) {
@@ -57,7 +56,6 @@ function Signup() {
     //     e.preventDefault();
 
     //     if(myOTP===parseInt(OTP)){
-    //         console.log("otp matched")
     //         await fetch(`${url}/saveuser`, {
     //             method: 'POST',
     //             headers: {

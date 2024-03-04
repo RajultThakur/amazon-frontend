@@ -1,9 +1,8 @@
 import React,{useContext} from 'react'
 import appContext from '../context/appContext'
-function CheckOut ({Total,item, checkOut}) {
+function CheckOut ({item, checkOut}) {
     const context = useContext(appContext)
-    const {total, cartProducts,logedUser} = context;
-    console.log(cartProducts,"+++++++++++++++++")
+    const {total} = context;
     return (
         <div className='checkout'>
             <div style={{marginBottom:"20px"}}><p style={{color:'#42818D',fontSize:"13px"}}>{total>=499?<p>You are eligible for FREE Delivery</p>:<p>Add {(499-total).toFixed(2)} to get Free Delivery</p>}</p>

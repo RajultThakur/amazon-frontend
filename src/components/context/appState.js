@@ -48,7 +48,6 @@ function AppState(props) {
   }
 
   const getLogedUserDetails = async() => {
-    console.log(localStorage.getItem("amazon-token"))
     const response = await fetch(`${url}/details`, {
       method: 'GET',
       headers: {
@@ -58,7 +57,6 @@ function AppState(props) {
       },
     })
     const data =await response.json();
-    console.log(data.mes,"data")
     if(data.mes != undefined){
       setLogedUser({name:data.mes.name,email:data.mes.email});
       localStorage.setItem("userInfo",JSON.stringify(data.mes));
@@ -79,7 +77,6 @@ function AppState(props) {
     setTotal(data.total);
     setCartTotal(data.totalProduct);
     data = data.mes;
-    // console.log(data.length)
     setCartProducts(data);
   }
 
@@ -93,7 +90,6 @@ function AppState(props) {
       body: JSON.stringify({url,title,price})
     })
     const data = await response.json();
-    console.log(data);
     setCartProduct({url:data.mes.url,price:data.mes.price,count:data.mes.count});
     if(data.success === false)window.alert("item already in your cart")
     else{
@@ -105,7 +101,6 @@ function AppState(props) {
     }
   
   const deleteProduct = async(url) =>{ 
-    console.log(url);
     const response = await fetch(`${url2}/addtocart`, {
       method: 'DELETE',
       headers: {
@@ -115,11 +110,9 @@ function AppState(props) {
       body:JSON.stringify({url})
     })
     let data  = await response.json();
-    // console.log(data)
     setTotal(total-data.info)
     data = data.mes;
     setCartTotal(data.length);
-    console.log(data.count + " " + data.price)
     localStorage.setItem("cartTotal",data.length);
     setCartProducts(data);
   }
